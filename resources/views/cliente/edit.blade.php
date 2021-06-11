@@ -15,44 +15,45 @@
             </div>
             
             <div class="col align-self-center">
-                <p class="fs-3">Cadastro de Clientes</p>
-                <form action=" {{route('cliente.store')}}" method="post">
+                <p class="fs-3">Edição de Cliente</p>
+                <form action=" {{route('cliente.update', $cliente->id)}}" method="post">
                     @CSRF
+                    @METHOD('PUT')
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Razão Social</label>
-                        <input type="name" name="nm_razao_social" class="form-control" id="exampleFormControlInput1">
+                        <input type="name" name="nm_razao_social" class="form-control" value="{{$cliente->nm_razao_social}}">
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Nome Fantasia</label>
-                        <input name="nm_fantasia" class="form-control" id="exampleFormControlInput1">
+                        <input name="nm_fantasia" class="form-control" value="{{$cliente->nm_fantasia}}">
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">CNPJ</label>
-                        <input name="cd_cnpj" class="form-control" id="exampleFormControlInput1">
+                        <input name="cd_cnpj" class="form-control" value="{{$cliente->cd_cnpj}}">
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Endereço</label>
-                        <input name="ds_endereco" class="form-control" id="exampleFormControlInput1">
+                        <input name="ds_endereco" class="form-control" value="{{$cliente->ds_endereco}}">
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Email</label>
-                        <input type="email" name="nm_email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                        <input type="email" name="nm_email" class="form-control" value="{{$cliente->nm_email}}" placeholder="name@example.com">
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Telefone</label>
-                        <input type="tel" name="cd_telefone" class="form-control" id="exampleFormControlInput1">
+                        <input type="tel" name="cd_telefone" class="form-control" value="{{$cliente->cd_telefone}}">
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Nome Responsável</label>
-                        <input name="nm_responsavel" class="form-control" id="exampleFormControlInput1">
+                        <input name="nm_responsavel" class="form-control" value="{{$cliente->nm_responsavel}}">
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">CPF</label>
-                        <input name="cd_cpf" class="form-control" id="exampleFormControlInput1">
+                        <input name="cd_cpf" class="form-control" value="{{$cliente->cd_cpf}}">
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Celular</label>
-                        <input type="tel" name="cd_celular" class="form-control" id="exampleFormControlInput1">
+                        <input type="tel" name="cd_celular" class="form-control" value="{{$cliente->cd_celular}}">
                     </div>
                     <div class="d-grid gap-2 col-6 mx-auto">
                         <button class="btn btn-primary" type="submit">Salvar</button>   

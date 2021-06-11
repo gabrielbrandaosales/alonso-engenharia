@@ -27,7 +27,7 @@
               <a class="nav-link active" aria-current="page" href="#">Início</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="cliente/create">Cadastro de Clientes</a>
+              <a class="nav-link" href=" {{ route('cliente.create')}} ">Cadastro de Clientes</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="cliente">Listar/Editar Clientes</a>
