@@ -19,8 +19,29 @@
                 font-family: 'Nunito', sans-serif;
             }
         </style>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     </head>
     <body>
-            <p>Assim está melhor</p>
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Início</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="cliente/create">Cadastro de Clientes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="cliente">Listar/Editar Clientes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Nova proposta</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Lista de propostas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Cadastro de Usuários
+            </a>
+            </li>
+          </ul>
     </body>
 </html>
