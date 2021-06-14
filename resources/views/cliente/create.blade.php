@@ -1,21 +1,14 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Cadastro Cliente</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-</head>
-<body>
+@extends('layouts.master')
+
+@section('title', 'Page Title')
+
+@section('content')
     <div class="container">
         <div class="row">
-            <div class="col align-self-start">
-                
-            </div>
-            
             <div class="col align-self-center">
-                <p class="fs-3">Cadastro de Clientes</p>
+                <div class="text-center">
+                    <h1>Cadastro de Clientes</h1>
+                </div>
                 <form action=" {{route('cliente.store')}}" method="post">
                     @CSRF
                     <div class="mb-3">
@@ -59,11 +52,10 @@
                     </div>
                 </form>
             </div>
-            <div class="col align-self-end">
-            One of three columns
-            </div>
         </div>
     </div>
+@stop
+    
     
 </body>
 </html>

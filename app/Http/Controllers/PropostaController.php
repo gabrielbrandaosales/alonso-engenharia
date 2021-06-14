@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Proposta;
+use App\Models\Cliente;
 use Illuminate\Http\Request;
 
 class PropostaController extends Controller
@@ -14,7 +15,18 @@ class PropostaController extends Controller
      */
     public function index()
     {
-        //
+        $cliente = Cliente::all();
+
+        //echo "{$cliente->nm_razao_social}";
+        $proposta = Proposta::all();
+        
+        //dd($proposta = $cliente->relProposta);
+        
+        //dd($proposta);
+        //echo "{$proposta->nm_endereco_obra}";
+        //dd($this->$proposta->relProposta);
+
+        return view('proposta.index', compact('proposta', 'cliente'));
     }
 
     /**
@@ -24,7 +36,8 @@ class PropostaController extends Controller
      */
     public function create()
     {
-        //
+        $clientes = Cliente::all();
+        return view('proposta.create', compact('clientes'));
     }
 
     /**
@@ -35,7 +48,11 @@ class PropostaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $post = Proposta::create($request->all());
+
+        return redirect()
+            ->route('cliente.index')
+            -> with('message', 'Cliente criado com sucesso');
     }
 
     /**
@@ -46,7 +63,8 @@ class PropostaController extends Controller
      */
     public function show(Proposta $proposta)
     {
-        //
+        
+        
     }
 
     /**
@@ -55,9 +73,13 @@ class PropostaController extends Controller
      * @param  \App\Models\Proposta  $proposta
      * @return \Illuminate\Http\Response
      */
-    public function edit(Proposta $proposta)
+    public function edit(Proposta $proposta, $id)
     {
-        //
+        if(!$proposta = Proposta::find($id)){
+            return redirect()->back();
+
+        }
+        return view('proposta.edit', compact('proposta'));
     }
 
     /**
@@ -67,9 +89,17 @@ class PropostaController extends Controller
      * @param  \App\Models\Proposta  $proposta
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Proposta $proposta)
+    public function update(Request $request, $id)
     {
-        //
+        if(!$post = Proposta::find($id)){
+            return redirect()->back();
+
+        }
+
+        $post->update($request->all());
+        return redirect()
+        -> route('proposta.index')
+        -> with('message', 'Proposta atualizada com sucesso');
     }
 
     /**
