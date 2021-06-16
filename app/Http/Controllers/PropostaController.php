@@ -50,7 +50,12 @@ class PropostaController extends Controller
      */
     public function store(Request $request)
     {
+        if($request->file('nm_anexo')->isValid()) {
+            $request->nm_anexo->store('proposta');
+        } 
         $post = Proposta::create($request->all());
+
+        
 
         return redirect()
             ->route('cliente.index')

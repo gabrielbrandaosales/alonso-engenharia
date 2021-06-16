@@ -9,7 +9,7 @@
                 <h1>Cadastro de Propostas</h1>
             </div>
             <div class="col align-self-center">
-                <form action=" {{route('proposta.store')}}" method="post">
+                <form action=" {{route('proposta.store')}}" method="post" enctype="multipart/form-data">
                     @CSRF
                     <div class="mb-3">
                         <select name="cliente_id" class="form-select" aria-label="Default select example">
@@ -54,7 +54,7 @@
                     </div>
                     <div class="input-group mb-3">
                         <input type="file" class="form-control" name="nm_anexo">
-                        <label class="input-group-text" for="inputGroupFile02">Anexo</label>
+                        <label class="input-group-text">Anexo</label>
                       </div>
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Status</label>
