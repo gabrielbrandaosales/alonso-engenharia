@@ -9,22 +9,22 @@
     <body>
         <ul class="nav nav-tabs">
             <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Início</a>
+                <a class="nav-link" href=" {{ route('usuario.index')}} "> Inicio </a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href=" {{ route('cliente.create')}} ">Cadastro de Clientes</a>
+                <a class="nav-link" href=" {{ route('cliente.create')}} ">Cadastro de Clientes</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href=" {{ route('cliente.index')}} ">Listar/Editar Clientes</a>
+                <a class="nav-link" href=" {{ route('cliente.index')}} ">Listar/Editar Clientes</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href=" {{ route('proposta.create')}} ">Nova proposta</a>
+                <a class="nav-link" href=" {{ route('proposta.create')}} ">Nova proposta</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href=" {{ route('proposta.index')}} ">Lista de propostas</a>
+                <a class="nav-link" href=" {{ route('proposta.index')}} ">Lista de propostas</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Cadastro de Usuários</a>
+                <a class="nav-link" href=" {{ route('usuario.create')}} "> Cadastro de Usuários</a>
             </li>
         </ul>
 

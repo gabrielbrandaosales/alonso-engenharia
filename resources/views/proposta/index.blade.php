@@ -11,7 +11,7 @@
         </div>
         <div class="card-body">
           <h5 class="card-title">Endereço: {{$proposta->nm_endereco_obra}}</h5>
-          <p class="card-text">Valor total: {{$proposta->qt_valor_total}}</p>
+          <p class="card-text">Valor total: R${{$proposta->qt_valor_total}}</p>
           <a href="{{ route('proposta.edit', $proposta->id) }}"><button type="button" class="btn btn-warning">Alterar</button></a>
         </div>
         <div class="card-footer text-muted">
@@ -20,4 +20,5 @@
       </div>
         
     @endforeach
+    <a class="btn btn-success" href="{{ route('export-excel') }}">Exportar Lista em Excel</a>
 @stop

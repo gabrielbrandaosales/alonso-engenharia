@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Proposta;
 use App\Models\Cliente;
 use Illuminate\Http\Request;
+use App\Exports\PropostaExport;
+use Excel;
 
 class PropostaController extends Controller
 {
@@ -111,5 +113,15 @@ class PropostaController extends Controller
     public function destroy(Proposta $proposta)
     {
         //
+    }
+
+    public function exportIntoExcel()
+    {
+        return Excel::download(new PropostaExport, 'propostaList.xlsx');
+    }
+
+    public function exportIntoCSV()
+    {
+        return Excel::download(new PropostaExport, 'propostaList.csv');
     }
 }

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\PropostaController;
+use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 
@@ -15,6 +16,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/usuario/create', [UsuarioController::class, 'create'])->name('usuario.create');
+Route::post('/usuario', [UsuarioController::class, 'store'])->name('usuario.store');
+Route::get('/', [UsuarioController::class, 'index'])->name('usuario.index');
+
 Route::put('/cliente/{id}', [ClienteController::class, 'update'])->name('cliente.update');
 Route::get('/cliente/edit/{id}', [ClienteController::class, 'edit'])->name('cliente.edit');
 Route::get('/cliente/create', [ClienteController::class, 'create'])->name('cliente.create');
@@ -29,5 +34,8 @@ Route::get('/proposta', [PropostaController::class, 'index'])->name('proposta.in
 Route::post('/proposta', [PropostaController::class, 'store'])->name('proposta.store');
 Route::get('/proposta/{id}', [PropostaController::class, 'show'])->name('proposta.show');
 
-Route::get('/', [Controller::class, 'index'])->name('welcome');
+
+
+Route::get('/export-excel', [PropostaController::class, 'exportIntoExcel'])->name('export-excel');
+Route::get('/export-csv', [PropostaController::class, 'exportIntoCSV'])->name('export-csv');
 
